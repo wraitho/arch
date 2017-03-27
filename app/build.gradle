@@ -42,6 +42,9 @@ dependencies {
     debugCompile project(path: ':base', configuration:'debug')
     releaseCompile project(path: ':base', configuration:'release')
 
+    debugCompile project(path: ':widgets', configuration:'debug')
+    releaseCompile project(path: ':widgets', configuration:'release')
+
     // RxJava and RxAndroid
     compile 'io.reactivex:rxjava:1.2.5'
     compile 'io.reactivex:rxandroid:1.2.1'

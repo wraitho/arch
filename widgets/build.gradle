@@ -7,11 +7,10 @@ android {
     defaultConfig {
         minSdkVersion 18
         targetSdkVersion 25
+        publishNonDefault true
         versionCode 1
         versionName "1.0"
-
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
-
     }
     buildTypes {
         release {
