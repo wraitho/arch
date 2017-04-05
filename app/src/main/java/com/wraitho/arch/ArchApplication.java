@@ -22,6 +22,7 @@ public class ArchApplication extends Application {
 					.archModule(new ArchModule(this))
 					.apiModule(new ApiModule())
 					.apiClientsModule(new ApiClientsModule())
+					.storesModule(new StoresModule())
 					.build();
 		}
 	}

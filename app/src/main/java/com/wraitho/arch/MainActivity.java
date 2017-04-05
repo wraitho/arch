@@ -24,8 +24,6 @@ public class MainActivity extends PresenterActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
 	public static final String TAG = "ArchApp";
-	@Inject
-    CharactersApi charactersApi;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,11 +33,7 @@ public class MainActivity extends PresenterActivity
         setSupportActionBar(toolbar);
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(view -> charactersApi.getCharacters().subscribe(characters -> {
-			for (Character character : characters) {
-				Log.d(TAG, "Character name: " + character.getName());
-			}
-		}, this::handleError ));
+        fab.setOnClickListener(view -> {});
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -64,23 +58,6 @@ public class MainActivity extends PresenterActivity
 	@Override
 	protected void initialisePresenters() {
 		// TODO: 27/03/2017   add and connect presenters
-	}
-
-	private void handleError(Throwable throwable) {
-		throwable.printStackTrace();
-		if (throwable instanceof RetrofitException) {
-			RetrofitException exception = (RetrofitException) throwable;
-
-			try {
-				Error error = exception.getErrorBodyAs(Error.class);
-
-				Log.d(TAG, "Error Status: " + error.getMessage());
-				Log.d(TAG, "Error Code: " + error.getCode());
-
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-		}
 	}
 
     @Override

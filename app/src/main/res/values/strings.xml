@@ -5,4 +5,10 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
     <string name="action_settings">Settings</string>
+
+    <!--general texts-->
+    <string name="error">Error</string>
+    <string name="cancel">Cancel</string>
+    <string name="retry">Retry</string>
+
 </resources>
